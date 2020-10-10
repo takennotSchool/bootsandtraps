@@ -61,9 +61,20 @@ function SubForm(){
 	        <input type="checkbox" class="custom-control-input" id="ApplyFormDataSave">
 	        <label class="custom-control-label" for="ApplyFormDataSave">I agree that this website will save submitted data</label>
 	    </div>
-    	<button class="btn btn-primary my-4 btn-block" type="submit" onclick="SubForm()">Apply to NotTI</button>
+    	<button class="btn btn-primary my-4 btn-block" type="submit" id="applyButton">Apply to NotTI</button>
+    	<script>
+    		$("#myForm").submit(function(e) {
+    				e.preventDefault();
+			});
+    		$("#applyButton").click(function(){
+    				SubForm();
+    				$("#myForm").hide();
+    				$(".clown").attr( "style", "display: block !important;");
+    		});
+    	</script>
 	</form>
-	<img src="../img/you.png" class="mx-auto d-block img-fluid" alt="Your picture if you apply to NotTI">
+	<img src="../img/you.png" class="mx-auto d-block img-fluid clown" alt="Your picture if you apply to NotTI">
+	<h1 class="display-1 text-center text-light clown blink">Who in their right mind would apply to this piece of garbage? You are a clown for even thinking about it. Get out.</h1>
 </div>
 </body>
 </html>

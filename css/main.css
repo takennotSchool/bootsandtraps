@@ -22,3 +22,7 @@ iframe {
 a:hover {
 	text-decoration: none;
 }
+
+.clown {
+	display: none !important;
+}

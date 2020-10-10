@@ -96,7 +96,15 @@ function SubForm(){
     <div class="form-group">
         <textarea class="form-control rounded-0" id="FormControlTextarea2" rows="3" placeholder="Message" name="message"></textarea>
     </div>
-    <button class="btn btn-info btn-block" type="submit">Send</button>
+    <button class="btn btn-info btn-block" type="submit" id="contactButton">Send</button>
+    <script>
+    	$("#contactForm").submit(function(e) {
+    		e.preventDefault();
+		});
+    	$("#contactButton").click(function(){
+    		SubForm();
+    	});
+    </script>
 	</form>
 	<p class="text-light text-center">Huge thanks to <a href="https://thispersondoesnotexist.com/">thispersondoesnotexist.com</a> & <a href="https://www.name-generator.org.uk/quick/">quick name generator</a></p>
 </div>
