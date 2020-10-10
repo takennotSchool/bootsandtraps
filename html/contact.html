@@ -7,6 +7,21 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<script src="../js/jquery-3.5.1.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+	<script>
+function SubForm(){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/1936/',
+        type:'post',
+        data:$("#contactForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted")
+        },
+        error: function(){
+          alert("There was an error")
+        }
+    });
+}
+	</script>
 	<title>Contact NotTI</title>
 </head>
 <body>
@@ -73,6 +88,16 @@
   			</div>
   		</div>
 	</div>
+	<br>
+	<form class="text-center border border-light p-5" action="#!" id="contactForm">
+    <p class="h4 mb-4 text-light">Contact us</p>
+    <input type="text" id="ContactFormName" class="form-control mb-4" placeholder="Name" name="name">
+    <input type="email" id="ContactFormEmail" class="form-control mb-4" placeholder="E-mail" name="email">
+    <div class="form-group">
+        <textarea class="form-control rounded-0" id="FormControlTextarea2" rows="3" placeholder="Message" name="message"></textarea>
+    </div>
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+	</form>
 	<p class="text-light text-center">Huge thanks to <a href="https://thispersondoesnotexist.com/">thispersondoesnotexist.com</a> & <a href="https://www.name-generator.org.uk/quick/">quick name generator</a></p>
 </div>
 </body>
