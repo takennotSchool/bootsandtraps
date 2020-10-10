@@ -26,3 +26,12 @@ a:hover {
 .clown {
 	display: none !important;
 }
+
+.fa {
+  border-radius: 50%;
+  color: white;
+}
+
+.fa:hover {
+	text-decoration: none;
+}
