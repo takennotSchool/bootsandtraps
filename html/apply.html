@@ -9,6 +9,7 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script>
 function SubForm(){
+	// Too lazy to write same thing again. So if you want to see more documented code - go to "contact.html"
     $.ajax({
         url:'https://api.apispreadsheets.com/data/1935/',
         type:'post',
@@ -42,6 +43,7 @@ function SubForm(){
 		<a href="contact.html" target="_blank">Contact NotTI</a>
 		<a href="apply.html" target="_blank">Apply to NotTI</a>
 	</nav>
+	 <!-- Apply form -->
 	<form class="text-center border border-light p-5" action="#!" id="myForm">
     	<p class="h4 mb-4 text-light">Apply to NotTI</p>
     	<div class="form-row mb-4">
@@ -59,6 +61,7 @@ function SubForm(){
     	<br>
 	    <div class="custom-control custom-checkbox text-light">
 	        <input type="checkbox" class="custom-control-input" id="ApplyFormDataSave">
+	         <!-- I wonder if it even does make a lot of difference?  -->
 	        <label class="custom-control-label" for="ApplyFormDataSave">I agree that this website will save submitted data</label>
 	    </div>
     	<button class="btn btn-primary my-4 btn-block" type="submit" id="applyButton">Apply to NotTI</button>
@@ -67,8 +70,11 @@ function SubForm(){
     				e.preventDefault();
 			});
     		$("#applyButton").click(function(){
+    				//Run SubForm()
     				SubForm();
+    				//Hides applying form
     				$("#myForm").hide();
+    				//Set clown attribute to "style="display: block !important". It is used because I used "display: none !important" in extern css. And because of that, jQuery's "show();" did not work (Because it had no priority over !important). But since inline css has bigger priority than extern css. I used inline css !important to get bigger priority than extern !important xD"
     				$(".clown").attr( "style", "display: block !important;");
     		});
     	</script>

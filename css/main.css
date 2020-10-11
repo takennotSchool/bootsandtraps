@@ -1,16 +1,16 @@
 body {
 	background-color: #301934;
 }
-
+/* Hide scrollbar because it's ugly */
 ::-webkit-scrollbar {
     display: none;
 }
-
+/* Google maps is now fitted into website (Hopefully) */
 iframe {
 	width: 100%;
 	height: 85vh;
 }
-
+/* Blinking for some texts. Sorry Bond :D */
 .blink {
 	animation: blinker 1s linear infinite;
 }
